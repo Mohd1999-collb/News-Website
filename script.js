@@ -16,10 +16,10 @@ xhr.open('GET', `https://newsapi.org/v2/top-headlines?${source}&country=in&apiKe
 
 // What to do when response is ready
 xhr.onload = function () {
-    if (this.status === 200) {
+//     if (this.status === 200) {
         let json = JSON.parse(this.responseText);
         let articles = json.articles;
-        console.log(articles);
+//         console.log(articles);
         let newsHtml = "";
         articles.forEach(function(element, index) {
             // console.log(element, index)
@@ -44,10 +44,10 @@ xhr.onload = function () {
             }
         });
         newsAccordion.innerHTML = newsHtml;
-    }
-    else {
-        console.log("Some error occured")
-    }
+//     }
+//     else {
+//         console.log("Some error occured")
+//     }
 }
 
 xhr.send()
